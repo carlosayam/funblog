@@ -11,3 +11,5 @@
 *.hp
 .stack-work/
 funblog.db*
+.bash_history
+.stack/

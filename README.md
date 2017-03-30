@@ -1,64 +1,30 @@
 funblog
 =====
 
-[![Build Status](https://travis-ci.org/agrafix/funblog.svg)](https://travis-ci.org/agrafix/funblog)
-
-
 ## Intro
 
+Attempt to use Docker to build/develop in funblog with GHC 8.0.1
 
-Blog written in Haskell
+See [funblog](https://github.com/agrafix/funblog)
 
-## Cli Usage: funblog
+## Does not work!
+
+Installing GHC 8.0.1 fails.
+
+To reproduce,
+1. install [docker](http://www.docker.com)
+2. clone this repo; and cd into it
+3. ./run
+   This will build image from haskell:8.0.1, although we plan to use local GHC, not the system-wide GHC in this container. It runs the container's /bin/bash, so you will be in a login shell.
+4. Once in there, de 
 
 ```sh
-$ funblog --help
-Usage: funblog
-
-Configure using the blog.cfg file
-
+root@..$ stack update
+root@..$ stack setup 
 ```
 
-## Install
+This last step will download GHC 8.0.1 and try to build it. It fails with 'Too many files open'
 
-* From Source (cabal): `git clone https://github.com/agrafix/funblog.git && cd funblog && cabal install`
-* From Source (stack): `git clone https://github.com/agrafix/funblog.git && cd funblog && stack build`
+## Credits
 
-# About funblog
-
-This is a simple blog software written in Haskell to demonstrate how to
-use the web framework [Spock](http://github.com/agrafix/Spock). It
-(will) provide(s) examples for:
-
-* Routing
-* Using template engines
-* Writing a REST API (JSON)
-* Working with Forms
-* Using a database
-* Session management
-* Background-Workers
-* Authentication
-* Spock Contexts
-
-This repository also provided the material for my talk at
-[BobKonf 2015 Berlin](http://bobkonf.de/2015/thiemann.html) (German).
-
-# Quickstart
-
-1. Clone the github repository
-2. Run `stack install`
-3. Adjust `blog.cfg`
-4. Run `funblog`
-
-Please note that this software is NOT intendet to be used in production (yet?).
-
-## Misc
-
-### Supported GHC Versions
-
-* 7.10.2
-
-### License
-
-Released under the Apache-2.0 license.
-(c) 2014 - 2016 Alexander Thiemann
+All credits to Alexander Thiemann; and all mistakes to me :-(

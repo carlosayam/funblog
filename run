@@ -1,0 +1,11 @@
+IMAGE_NAME="funblog"
+if [ "`docker images -q $IMAGE_NAME:latest`" == '' ]; then
+    echo ">>"
+    echo ">> Image $IMAGE_NAME not found, building it (this will happen only once)"
+    echo ">>"
+    docker build -t $IMAGE_NAME .
+    echo ">>"
+    echo ">> Image $IMAGE_NAME ready, starting"
+    echo ">>"
+fi
+docker run -ti --rm -v `pwd`:/root $IMAGE_NAME /bin/bash
