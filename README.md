@@ -25,6 +25,8 @@ root@..$ stack setup
 
 This last step will download GHC 8.0.1 and try to build it. It fails with 'Too many files open'
 
+One can put into stack.yaml "system-ghc: true", but I wonder why build of ghc 8.0.1 is failing...?
+
 ## Credits
 
 All credits to Alexander Thiemann; and all mistakes to me :-(
