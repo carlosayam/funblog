@@ -10,6 +10,8 @@
 *.aux
 *.hp
 .stack-work/
+.stack/
+.bash_history
 funblog.db*
 .bash_history
 .stack/
