@@ -1,3 +1,3 @@
-FROM haskell:8.0.1
+FROM haskell:8.0.2
 WORKDIR "/root"
 CMD ["/bin/bash"]
